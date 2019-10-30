@@ -1,0 +1,30 @@
+﻿<Window x:Class="Labo5_interfce.View.Page2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labo5_interfce.View"
+        mc:Ignorable="d"
+        Title="Page2" Height="450" Width="800">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Background="LightGray">
+            <TextBlock  HorizontalAlignment="Left" Margin="10,10,0,0" Text="VOS JEUX PRÉFÉRÉS :" VerticalAlignment="Top" Width="347"  FontSize="30" FontFamily="Impact"/>
+            <TextBlock FontSize="20" HorizontalAlignment="Center" Text="Ajouter un jeux :" FontFamily="Impact" Margin="0,20,0,0"></TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock HorizontalAlignment="Left" Width="150" Text="nom d'affichage du jeux :"></TextBlock>
+                <TextBox HorizontalAlignment="Right" Width="150" Text="{Binding Jeu.Nom}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+            <TextBlock HorizontalAlignment="Left" Width="150" Text="chemin d'accès :"></TextBlock>
+            <TextBox HorizontalAlignment="Right" Width="150" Text="{Binding Jeu.Chemin}" ></TextBox>
+        </StackPanel>
+            <Button Content="Ajouter" Height="23" HorizontalAlignment="Center" Margin="0,20,0,0" Name="Ajouter" Command="{Binding AjouterCommand}" VerticalAlignment="Top" Width="70" />
+            <TextBlock HorizontalAlignment="Left" Width="150" Text="{Binding Exception2}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" >
+                <ListBox ItemsSource="{Binding Jeux}"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
